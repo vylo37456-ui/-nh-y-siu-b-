@@ -1,0 +1,129 @@
+function taoDoNhay(tenMay){
+
+    let ten = tenMay.toLowerCase();
+
+    if(ten.includes("iphone")){
+        return {
+            tongQuat:185,
+            chamDo:180,
+            x2:170,
+            x4:160,
+            awm:100,
+            dpi:480,
+            nutBan:48
+        };
+    }
+
+    if(ten.includes("samsung") || ten.includes("galaxy")){
+        return {
+            tongQuat:200,
+            chamDo:200,
+            x2:190,
+            x4:180,
+            awm:120,
+            dpi:520,
+            nutBan:55
+        };
+    }
+
+    if(
+        ten.includes("xiaomi") ||
+        ten.includes("redmi")
+    ){
+        return {
+            tongQuat:195,
+            chamDo:190,
+            x2:180,
+            x4:170,
+            awm:110,
+            dpi:500,
+            nutBan:54
+        };
+    }
+
+    if(ten.includes("poco")){
+        return {
+            tongQuat:198,
+            chamDo:195,
+            x2:185,
+            x4:180,
+            awm:120,
+            dpi:540,
+            nutBan:53
+        };
+    }
+
+    if(ten.includes("oppo")){
+        return {
+            tongQuat:190,
+            chamDo:185,
+            x2:175,
+            x4:165,
+            awm:105,
+            dpi:500,
+            nutBan:56
+        };
+    }
+
+    if(ten.includes("vivo")){
+        return {
+            tongQuat:195,
+            chamDo:190,
+            x2:180,
+            x4:170,
+            awm:110,
+            dpi:510,
+            nutBan:54
+        };
+    }
+
+    if(ten.includes("realme")){
+        return {
+            tongQuat:194,
+            chamDo:189,
+            x2:179,
+            x4:169,
+            awm:109,
+            dpi:505,
+            nutBan:55
+        };
+    }
+
+    return {
+        tongQuat:190,
+        chamDo:185,
+        x2:175,
+        x4:165,
+        awm:100,
+        dpi:500,
+        nutBan:50
+    };
+}
+
+function showData(){
+
+    let phone = document.getElementById("phone").value;
+
+    if(phone.trim()===""){
+        alert("Nhập tên điện thoại");
+        return;
+    }
+
+    let d = taoDoNhay(phone);
+
+    let result = document.getElementById("result");
+
+    result.innerHTML = `
+    <h3>📱 ${phone}</h3>
+
+    <p>🔥 Tổng quát: ${d.tongQuat}</p>
+    <p>🎯 Chấm đỏ: ${d.chamDo}</p>
+    <p>🔭 2X: ${d.x2}</p>
+    <p>🔭 4X: ${d.x4}</p>
+    <p>🎯 AWM: ${d.awm}</p>
+    <p>⚙️ DPI: ${d.dpi}</p>
+    <p>🖱️ Nút bắn: ${d.nutBan}%</p>
+    `;
+
+    result.classList.remove("hidden");
+}
